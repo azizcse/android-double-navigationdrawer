@@ -25,14 +25,14 @@
     <fragment
         android:id="@+id/drawer_right_fragemnt"
         android:name="com.core.drawer.right.RightFragment"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity="right"
         app:layout="@layout/fragment_right" />
     <fragment
         android:id="@+id/drawer_left_fragemnt"
         android:name="com.core.drawer.left.LeftDrawer"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="match_parent"
         android:layout_gravity="left"
         app:layout="@layout/fragment_left" />
