@@ -1,3 +1,11 @@
+# Double navigation drawer demo includs
+
+* Features
+  * Double navigation drawer 
+  * Each drawer contains custom layout
+  * RecyclerView
+  * Generic adapter with item click clistenr
+
 # Screen shots
 ![main](https://user-images.githubusercontent.com/6915280/36160081-834605b8-110a-11e8-8cc3-a935061dbcb0.png)
 
