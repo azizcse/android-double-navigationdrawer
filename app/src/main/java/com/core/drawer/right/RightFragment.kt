@@ -7,8 +7,11 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.core.drawer.R
 import com.core.drawer.model.Data
+import com.core.drawer.model.DrawerItem
+import com.core.kbasekit.ui.base.BaseListener
 
 
 /*
@@ -22,7 +25,15 @@ import com.core.drawer.model.Data
 *  ****************************************************************************
 */
 
-class RightFragment : Fragment() {
+class RightFragment : Fragment(), BaseListener<DrawerItem>{
+
+    override fun onItemClick(view: View, t: DrawerItem) {
+        Toast.makeText(activity, t.name, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onItemClick(view: View, position: Int) {
+    }
+
     lateinit var rightRv : RecyclerView
     override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val view = inflater?.inflate(R.layout.fragment_right, container, false)
@@ -34,6 +45,7 @@ class RightFragment : Fragment() {
 
     private fun loadView(){
         var rithtAdapter =  RightAdapter(activity)
+        rithtAdapter.itemClickListener = this
         rightRv.adapter =rithtAdapter
         rightRv.layoutManager = LinearLayoutManager(activity)
         rithtAdapter.addItems(Data.getData())

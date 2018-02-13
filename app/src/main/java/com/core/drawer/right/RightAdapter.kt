@@ -37,13 +37,18 @@ class RightAdapter : BaseAdapter<DrawerItem> {
         return ItemHolder(view)
     }
 
-    private inner class ItemHolder(itemView:View) : BaseViewHolder<DrawerItem>(itemView){
+    private inner class ItemHolder(itemView:View) : BaseViewHolder<DrawerItem>(itemView), View.OnClickListener{
         private var nameTv : TextView
         init {
-            nameTv = itemView.findViewById(R.id.name_tv);
+            nameTv = itemView.findViewById(R.id.name_tv)
+            nameTv.setOnClickListener(this)
         }
         override fun bind(item: DrawerItem) {
             nameTv.text = item.name
+        }
+
+        override fun onClick(v: View?) {
+            itemClickListener?.onItemClick(v!!, getItem(adapterPosition))
         }
 
     }

@@ -18,7 +18,7 @@ import android.view.ViewGroup
 open abstract class BaseAdapter<T> : RecyclerView.Adapter<BaseViewHolder<T>>() {
 
     private val mItemList: ArrayList<T> = arrayListOf()
-
+    var itemClickListener : BaseListener<T>? = null
 
     override fun getItemCount(): Int {
         return mItemList.size
